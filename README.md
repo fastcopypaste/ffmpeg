@@ -46,3 +46,12 @@ file '1.mp4'
 file '2.mp4'
 file '3.mp4'
 ```
+3. Record screen in Linux:
+
+```
+ffmpeg -f x11grab  -s 1280x1024 -i :1 -r 25 -vcodec libx264  output.mkv
+```
+You can change `1280x1024` with this:
+```
+xrandr -q --current | grep '*' | awk '{print$1}'
+```
