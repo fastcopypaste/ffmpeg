@@ -55,3 +55,9 @@ You can change `1280x1024` with this:
 ```
 xrandr -q --current | grep '*' | awk '{print$1}'
 ```
+
+4. Cut video if from start to end:
+
+```
+ffmpeg -i in.mp4 -ss 00:00:00 -t 00:01:28 -async 1 -strict -2 cut.mp4
+```
